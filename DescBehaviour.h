@@ -20,7 +20,7 @@ DescBehaviour<T>::DescBehaviour(){
 
 template <class T>
 bool DescBehaviour<T>::compare(T a, T b){
-	if(a.compare(b)<0){
+	if(a<b){
 		return true;
 	}
 	else{

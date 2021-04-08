@@ -20,7 +20,7 @@ AscBehaviour<T>::AscBehaviour(){
 
 template <class T>
 bool AscBehaviour<T>::compare(T a, T b){
-	if(a.compare(b)>0){
+	if(a>b){
 		return true;
 	}
 	else{

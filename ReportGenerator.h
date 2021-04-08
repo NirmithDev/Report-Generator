@@ -1,0 +1,25 @@
+#ifndef REPORTGENERATOR_H
+#define REPORTGENERATOR_H
+
+#include<vector>
+#include "Record.h"
+
+
+class ReportGenerator{
+
+	private:
+		static vector<Record*> census;
+		Map<int> year;
+		Map<string> region;
+		Map<string> animalType;
+	public:
+		//not specified but it is here anyway
+		ReportGenerator();
+		//the function to populate the maps and census collection
+		static void populate();
+		virtual void compute()=0;
+		//cleanup function for later on to clean up the census collection
+		
+};
+
+#endif
