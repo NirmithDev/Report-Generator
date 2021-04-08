@@ -6,6 +6,8 @@ using namespace std;
 
 int main(){
 	cout<<"TEST 1"<<endl;
+	ReportGenerator a;
+	a.populate();
 	//ReportGenerator* a=new ReportGenerator();
 	//a.populate();
 	return 0;
