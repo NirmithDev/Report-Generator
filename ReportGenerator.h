@@ -19,7 +19,7 @@ class ReportGenerator{
 		static void populate();
 		//virtual void compute()=0;
 		//cleanup function for later on to clean up the census collection
-		
+		void cleanUp();
 };
 
 #endif

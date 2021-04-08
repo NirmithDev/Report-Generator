@@ -13,10 +13,21 @@ using namespace std;
 
 vector<Record*> ReportGenerator::census;
 Map<int> ReportGenerator::yearMap;
+Map<string> ReportGenerator::regionMap;
+Map<string> ReportGenerator::animalTypeMap;
+
 
 ReportGenerator::ReportGenerator(){
 	cout<<"I am here"<<endl;
 }
+
+void ReportGenerator::cleanUp(){
+	for(int i=0;i<census.size();i++){
+		delete census[i];
+	}
+	cout<<"\ndestroyed\n";
+}
+
 void ReportGenerator::populate(){
 	cout<<"WE ARE HERE"<<endl;
 	ostream_iterator<Record> outItr(cout);
@@ -38,9 +49,11 @@ void ReportGenerator::populate(){
 	for(int i=0;i<census.size();i++){
 		//populate each map with each respective key ish
 		yearMap.add(census[i]->getYear(),census[i]);
-		//region.add(census[i]->getRegion(),census[i]);
-		//animalType.add(census[i]->getanimalType(),census[i]);
+		regionMap.add(census[i]->getRegion(),census[i]);
+		animalTypeMap.add(census[i]->getanimalType(),census[i]);
 	}
 	cout<<yearMap.getKeySize()<<endl;
+	cout<<regionMap.getKeySize()<<endl;
+	cout<<animalTypeMap.getKeySize()<<endl;
 	//copy(census.begin(), census.end(), outItr);
 }
