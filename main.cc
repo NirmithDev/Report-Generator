@@ -2,10 +2,15 @@
 using namespace std;
 #include <string>
 
-//#include "Control.h"
+#include "ReportGenerator.h"
 
 int main(){
-//	Control c;
-//	c.launch();
+	cout<<"TEST 1"<<endl;
+	//ReportGenerator* a=new ReportGenerator();
+	//a.populate();
 	return 0;
 }
+
+
+//	Control c;
+//	c.launch();
