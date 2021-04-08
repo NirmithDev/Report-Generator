@@ -9,9 +9,9 @@ class ReportGenerator{
 
 	private:
 		static vector<Record*> census;
-		Map<int> year;
-		Map<string> region;
-		Map<string> animalType;
+		static Map<int> yearMap;
+		static Map<string> regionMap;
+		static Map<string> animalTypeMap;
 	public:
 		//not specified but it is here anyway
 		ReportGenerator();

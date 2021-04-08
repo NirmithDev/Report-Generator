@@ -6,13 +6,18 @@ class Record
 {
 	friend ostream& operator<<(ostream&,Record&);
 	public:
-		Record(int,string,int);
+		Record(int,string,int,int,string,string);
 		int getYear();
-		string getRegion() const;
+		int getnumAnimals();
+		int getnumFarms();
+		
+		string getRegion();
+		string getanimalType();
+		string getsubRegion();
 	private:
 		int year;
-		string region;
-		int numAnimals;
+		string region,subRegion,animalType;
+		int numAnimals,numFarms;
 
 };
 
