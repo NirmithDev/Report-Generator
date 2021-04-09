@@ -2,18 +2,19 @@
 using namespace std;
 #include <string>
 
-#include "ReportGenerator.h"
+#include "Report3.h"
 
 int main(){
 	cout<<"TEST 1"<<endl;
-	ReportGenerator a;
-	a.populate();
-	a.cleanUp();
-	//ReportGenerator* a=new ReportGenerator();
-	//a.populate();
+	Report3 a;
 	return 0;
 }
 
+//ReportGenerator a;
+	//a.populate();
+	//a.cleanUp();
+	//ReportGenerator* a=new ReportGenerator();
+	//a.populate();
 
 //	Control c;
 //	c.launch();

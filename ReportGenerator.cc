@@ -16,11 +16,11 @@ Map<int> ReportGenerator::yearMap;
 Map<string> ReportGenerator::regionMap;
 Map<string> ReportGenerator::animalTypeMap;
 
-
+/*
 ReportGenerator::ReportGenerator(){
 	cout<<"I am here"<<endl;
 }
-
+*/
 void ReportGenerator::cleanUp(){
 	for(int i=0;i<census.size();i++){
 		delete census[i];
