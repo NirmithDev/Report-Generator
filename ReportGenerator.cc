@@ -43,8 +43,8 @@ void ReportGenerator::populate(){
 		census.push_back(new Record(year,region,numAnimals,numFarms,subRegion,animalType));
 	}
 	
-	cout<<endl<<"List of DETAILS:"<<endl;
-	cout<<census.size()<<endl;
+	//cout<<endl<<"List of DETAILS:"<<endl;
+	//cout<<census.size()<<endl;
 	
 	for(int i=0;i<census.size();i++){
 		//populate each map with each respective key ish
@@ -52,8 +52,8 @@ void ReportGenerator::populate(){
 		regionMap.add(census[i]->getRegion(),census[i]);
 		animalTypeMap.add(census[i]->getanimalType(),census[i]);
 	}
-	cout<<yearMap.getKeySize()<<endl;
-	cout<<regionMap.getKeySize()<<endl;
-	cout<<animalTypeMap.getKeySize()<<endl;
+	//cout<<yearMap.getKeySize()<<endl;
+	//cout<<regionMap.getKeySize()<<endl;
+	//cout<<animalTypeMap.getKeySize()<<endl;
 	//copy(census.begin(), census.end(), outItr);
 }
