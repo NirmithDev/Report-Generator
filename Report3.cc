@@ -9,7 +9,10 @@ Report3::Report3(){
 }
 Report3::~Report3(){}
 
-void Report3::compute(){}
+void Report3::compute(){
+	cout<<"I WAS CALLED\n";
+	ReportGenerator::populate();
+}
 
 void Report3::formatData(){}
 

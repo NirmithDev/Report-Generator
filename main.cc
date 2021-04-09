@@ -7,6 +7,7 @@ using namespace std;
 int main(){
 	cout<<"TEST 1"<<endl;
 	Report3 a;
+	a.compute();
 	return 0;
 }
 
