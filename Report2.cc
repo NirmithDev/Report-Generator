@@ -51,6 +51,25 @@ void Report2::compute(){
 	for(int i=0;i<k.size();i++){
 		cout<<*k[i];
 	}
+	int sum2011=0;
+	
+	for(int i=0;i<k.size();i++){
+		sum2011+=k[i]->getnumAnimals();
+	}
+	cout<<sum2011<<endl;
+	
+	//calculation of percentage of shizzle for 2011
+	//float per=0.00;
+	for(int i=0;i<k.size();i++){
+		//cout<<sum2011<<endl;
+		//cout<<"  ->"<<k[i]->getnumAnimals()<<"   -";
+		float per=100*k[i]->getnumAnimals()/(float)sum2011;
+		cout<<k[i]->getanimalType()<<"    ->"<<per;
+		cout<<endl;
+//		cout<<k[i]->getanimalType()<<"  -  "<<per<<endl;
+	}
+	
+	
 
 }
 
