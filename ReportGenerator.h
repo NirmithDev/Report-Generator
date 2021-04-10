@@ -4,6 +4,7 @@
 #include<vector>
 #include "Record.h"
 #include "Map.h"
+#include "ReportData.h"
 
 class ReportGenerator{
 

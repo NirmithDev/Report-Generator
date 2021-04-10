@@ -9,6 +9,7 @@ using namespace std;
 #include <algorithm>
 #include <cstdlib>
 
+
 int main(){
 	cout<<"TEST 1"<<endl;
 	int year,numFarms,numAnimals;

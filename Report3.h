@@ -3,9 +3,8 @@
 
 #include<vector>
 #include<list>
-#include "ReportData.h"
+//#include "ReportData.h"
 #include "ReportGenerator.h"
-#include "AscBehaviour.h"
 #include "DescBehaviour.h"
 
 class Report3:public ReportGenerator{

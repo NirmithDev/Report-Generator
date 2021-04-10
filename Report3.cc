@@ -123,7 +123,6 @@ void Report3::compute(){
 }
 
 void Report3::formatData(ReportData<int>* ab){
-
 	for(int i=0;i<max.size();i++){
 		//cout<<*max[i];
 		stringstream ss;

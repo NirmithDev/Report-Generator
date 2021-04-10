@@ -11,6 +11,7 @@ using namespace std;
 
 #include "ReportGenerator.h"
 
+
 vector<Record*> ReportGenerator::census;
 Map<int> ReportGenerator::yearMap;
 Map<string> ReportGenerator::regionMap;
