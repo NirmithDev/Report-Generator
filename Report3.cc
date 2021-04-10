@@ -22,20 +22,55 @@ Report3::~Report3(){
 	ReportGenerator::cleanUp();
 }
 
-void Report3::computeHelper(vector<Record*> a){
+void Report3::computeHelper(vector<Record*> e){
 
 	cout<<"HELPER FUNCITON"<<endl;
 	
-	cout<<a.size()<<endl;
-	
-	for(int i=0;i<a.size();i++){
-		if(a[i]->getRegion()!="CAN"){
-			max.push_back(a[i]);
+	cout<<e.size()<<endl;
+	int j;
+	for(int i=0;i<e.size();i++){
+		//cout<<*e[i];
+		if(e[i]->getRegion()!="CAN"){
+			cout<<*e[i];
+			for(j=i+1;j<e.size();j++){
+				//if they have the same sub region
+				if(e[i]->getRegion()==e[j]->getRegion()){
+					cout<<"------------------NESTED FOR LOOP->";
+					cout<<*e[j];
+				}
+				else{
+					break;
+				}
+				//max.push_back(e[i]);
+				//cout<<endl;
+			}
+			cout<<"\n-----------------------------\n";
+			max.push_back(e[i]);
+			i=j-1;
+			cout<<i<<"  ";
 		}
+		
+	}
+	cout<<"\n\nMAX ARRAY TEST\n";
+	for(int i=0;i<max.size();i++){
+		cout<<*max[i];
 	}
 	cout<<max.size()<<endl;
 	
 }
+
+/*if(a[i]->getRegion()!="CAN"){
+			//iterate through the collection starting from position i+1 and check if the regions are same
+			for(j=i+1;j<a.size();j++){
+				
+				cout<<a[j]->getsubRegion()<<endl;
+				//if(a[j]->getsubRegion() != "All" && a[i]->getsubRegion()!= "All"){
+					//max.push_back(a[j]);
+				//	break;
+				//} 
+			}
+			max.push_back(a[j]);
+		}*/
 
 void Report3::compute(){
 	cout<<"I WAS CALLED\n";
