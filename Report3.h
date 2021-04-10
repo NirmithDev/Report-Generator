@@ -27,7 +27,7 @@ class Report3:public ReportGenerator{
 		//static void populate();
 		virtual void compute();
 		//add in the parameter as seen fit
-		virtual void formatData();
+		virtual void formatData(ReportData<int>*);
 		//printing the data
 		virtual void printReport(ReportData<int>*);
 		//cleanup function for later on to clean up the census collection

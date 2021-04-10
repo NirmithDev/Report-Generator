@@ -65,51 +65,14 @@ void Report3::computeHelper(vector<Record*> e){
 	
 	
 	
-	cout<<"\n\nMAX ARRAY TEST\n";
-	for(int i=0;i<max.size();i++){
-		cout<<*max[i];
-	}
-	cout<<max.size()<<endl;
-	
+	//cout<<"\n\nMAX ARRAY TEST\n";
+	//for(int i=0;i<max.size();i++){
+	//	cout<<*max[i];
+	//}
+	//cout<<max.size()<<endl;
+	formatData(repo3);
 }
-/*for(j=i;j<e.size();j++){
-				if(e[j]!=e[i]){
-					if(e[j]->getsubRegion()!="All"  && e[i]->getsubRegion()!="All"){
-					//if they have the same region
-						if(e[i]->getRegion()==e[j]->getRegion()){
-							cout<<"------------------NESTED FOR LOOP->";
-							cout<<*e[j];
-							//find the subRegion with the highest horses
-							//if(e[i]->getnumAnimals()>){
-								
-							//}
-							
-						}
-						else{
-							i=j;
-							break;
-						}
-					}
-					//else{
-					//	i=j;
-					//	break;
-					//}
-				//max.push_back(e[i]);
-				//cout<<endl;
-				}
-			}*/
-/*if(a[i]->getRegion()!="CAN"){
-			//iterate through the collection starting from position i+1 and check if the regions are same
-			for(j=i+1;j<a.size();j++){
-				
-				cout<<a[j]->getsubRegion()<<endl;
-				//if(a[j]->getsubRegion() != "All" && a[i]->getsubRegion()!= "All"){
-					//max.push_back(a[j]);
-				//	break;
-				//} 
-			}
-			max.push_back(a[j]);
-		}*/
+
 
 void Report3::compute(){
 	cout<<"I WAS CALLED\n";
@@ -136,11 +99,15 @@ void Report3::compute(){
 	}*/
 	cout<<endl;
 	//region  ||  sub region  || number of horse and ponies in that sub region
-	
+	//formatData(repo3);
 	
 }
 
-void Report3::formatData(){}
+void Report3::formatData(ReportData<int>* ab){
+	//compute();
+	cout<<"FORMATTING"<<endl;
+	cout<<max.size()<<endl;
+}
 
 void Report3::printReport(ReportData<int>* k){}
 

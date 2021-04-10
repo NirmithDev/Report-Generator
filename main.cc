@@ -8,6 +8,7 @@ int main(){
 	cout<<"TEST 6"<<endl;
 	Report3 a;
 	a.compute();
+	
 	return 0;
 }
 
