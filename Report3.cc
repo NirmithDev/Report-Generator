@@ -28,28 +28,31 @@ void Report3::computeHelper(vector<Record*> e){
 	
 	cout<<e.size()<<endl;
 	int j;
+	int maxHor=0;
+	int maxPos=0;
 	for(int i=0;i<e.size();i++){
 		//cout<<*e[i];
-		if(e[i]->getRegion()!="CAN"){
+		if(e[i]->getRegion()!="CAN" && e[i]->getsubRegion()!="All"){
 			cout<<*e[i];
-			for(j=i+1;j<e.size();j++){
-				//if they have the same sub region
-				if(e[i]->getRegion()==e[j]->getRegion()){
-					cout<<"------------------NESTED FOR LOOP->";
-					cout<<*e[j];
+			for(int j=i+1;j<=e.size();j++){
+				if(e[j]->getRegion()==e[i]->getRegion()){
+					cout<<"----------------";
+					cout<<*e[j];				
 				}
-				else{
+				else{	
+					i=j-1;
 					break;
 				}
-				//max.push_back(e[i]);
-				//cout<<endl;
-			}
+				//cout<<"----------------";
+				//cout<<*e[j];
+			}		
+			//i=j;
 			cout<<"\n-----------------------------\n";
 			max.push_back(e[i]);
-			i=j-1;
-			cout<<i<<"  ";
+			
 		}
-		
+			
+		//}
 	}
 	cout<<"\n\nMAX ARRAY TEST\n";
 	for(int i=0;i<max.size();i++){
@@ -58,7 +61,32 @@ void Report3::computeHelper(vector<Record*> e){
 	cout<<max.size()<<endl;
 	
 }
-
+/*for(j=i;j<e.size();j++){
+				if(e[j]!=e[i]){
+					if(e[j]->getsubRegion()!="All"  && e[i]->getsubRegion()!="All"){
+					//if they have the same region
+						if(e[i]->getRegion()==e[j]->getRegion()){
+							cout<<"------------------NESTED FOR LOOP->";
+							cout<<*e[j];
+							//find the subRegion with the highest horses
+							//if(e[i]->getnumAnimals()>){
+								
+							//}
+							
+						}
+						else{
+							i=j;
+							break;
+						}
+					}
+					//else{
+					//	i=j;
+					//	break;
+					//}
+				//max.push_back(e[i]);
+				//cout<<endl;
+				}
+			}*/
 /*if(a[i]->getRegion()!="CAN"){
 			//iterate through the collection starting from position i+1 and check if the regions are same
 			for(j=i+1;j<a.size();j++){
