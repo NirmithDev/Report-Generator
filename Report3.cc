@@ -71,6 +71,7 @@ void Report3::computeHelper(vector<Record*> e){
 	//}
 	//cout<<max.size()<<endl;
 	formatData(repo3);
+	printReport(repo3);
 }
 
 
@@ -107,9 +108,18 @@ void Report3::formatData(ReportData<int>* ab){
 	//compute();
 	cout<<"FORMATTING"<<endl;
 	cout<<max.size()<<endl;
+	for(int i=0;i<max.size();i++){
+		//cout<<*max[i];
+		stringstream ss;
+		ss<<*max[i];
+		//cout<<max[i]->getnumAnimals()<<endl;
+		ab->add(max[i]->getnumAnimals(),ss.str());
+	}
 }
 
-void Report3::printReport(ReportData<int>* k){}
+void Report3::printReport(ReportData<int>* k){
+	cout<<*k;
+}
 
 
 
