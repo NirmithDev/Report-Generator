@@ -8,6 +8,8 @@ using namespace std;
 #include <algorithm>
 #include<string>
 
+#include <fstream>
+
 #include "Report3.h"
 #include "Record.h"
 
@@ -62,16 +64,30 @@ void Report3::computeHelper(vector<Record*> e){
 	}
 	//now for the all shizzle I am thinking a count so like say the ones without a subregion will have a count of 0 and it just got a all
 	for(int i=0;i<e.size();i++){
+	int count=0;
 		if(e[i]->getRegion()!="CAN"){
-			cout<<*e[i];
+			//cout<<*e[i];
+			for(int j=i;j<e.size();j++){
+				if(e[j]->getRegion()==e[i]->getRegion()){
+					//cout<<"----------------";
+					//cout<<*e[j];
+					count++;
+				}
+				else{
+					i=j-1;
+					break;
+				}
+				//cout<<"\n----------------\n";
+			}
+			if(count==1){
+				//cout<<"--------------------";
+				//cout<<*e[i];
+				max.push_back(e[i]);
+			}
+			//cout<<"count ->"<<count<<"\n----------------\n";
 		}
 	}
-	
-	//cout<<"\n\nMAX ARRAY TEST\n";
-	//for(int i=0;i<max.size();i++){
-	//	cout<<*max[i];
-	//}
-	//cout<<max.size()<<endl;
+
 	formatData(repo3);
 	printReport(repo3);
 }
@@ -107,15 +123,20 @@ void Report3::compute(){
 }
 
 void Report3::formatData(ReportData<int>* ab){
-	//compute();
-	//cout<<"FORMATTING"<<endl;
-	//cout<<max.size()<<endl;
+
 	for(int i=0;i<max.size();i++){
 		//cout<<*max[i];
 		stringstream ss;
-		ss<<max[i]->getYear()<<"   "<<setw(40)<<left<<max[i]->getsubRegion()<<"   "<<setw(6)<<right<<max[i]->getnumAnimals()<<endl;
+		if(max[i]->getsubRegion()=="All"){
+			ss<<max[i]->getRegion()<<"   "<<setw(40)<<left<<"  "<<"  "<<setw(7)<<right<<0<<endl;
 		//cout<<max[i]->getnumAnimals()<<endl;
-		ab->add(max[i]->getnumAnimals(),ss.str());
+			ab->add(0,ss.str());
+		}
+		else{
+			ss<<max[i]->getRegion()<<"   "<<setw(40)<<left<<max[i]->getsubRegion()<<"   "<<setw(6)<<right<<max[i]->getnumAnimals()<<endl;
+		//cout<<max[i]->getnumAnimals()<<endl;
+			ab->add(max[i]->getnumAnimals(),ss.str());
+		}
 	}
 }
 
@@ -123,7 +144,19 @@ void Report3::printReport(ReportData<int>* k){
 	cout<<"\n\t SUB-REGION WITH MOST HORSES/PONIES BY REGION IN 2016\t\t\n";
 	cout<<"\t------------------------------------------------------\n";
 	cout<<*k;
-	//now write into the file
+	cout<<"\t------------------------------------------------------\n";
+	//now write all this shizzle into the file
+	ofstream outfile("Report3.txt",ios::out);
+	if (!outfile) {
+    		cout << "Error:  could not open file" << endl;
+    		exit(1);
+  	}
+  	
+  	outfile<<"\n\t SUB-REGION WITH MOST HORSES/PONIES BY REGION IN 2016\t\t\n";
+  	outfile<<"\t------------------------------------------------------\n";
+  	outfile<<*k;
+  	outfile<<"\t------------------------------------------------------\n";
+  	outfile<<endl;
 }
 
 
@@ -133,56 +166,12 @@ void Report3::printReport(ReportData<int>* k){
 
 
 
-/*
-//through all the regions
-	int kill=0;
-	//find the one with the maximum value
-	
 
-vector<Record*> Max;
-	int maxPos=0;
-	//cout<<*k[0];
-	for(int i=0;i<k.size();i++){
-		if(k[i]->getsubRegion()!="All"){
-			int temp=0;
-			if(k[kill]->getRegion()==k[i]->getRegion()){
-				//cout<<k[kill]->getRegion()<<" ---->"<<k[kill]->getsubRegion()<<endl;
-				//cout<<"--->>"<<kill<<endl;
-				if(temp<k[kill]->getnumAnimals()){
-					maxPos=kill;
-					temp=k[kill]->getnumAnimals();
-				}
-				else if(temp<k[i]->getnumAnimals()){
-					maxPos=i;
-					temp=k[i]->getnumAnimals();
-				}
-				else if(temp>k[kill]->getnumAnimals()){
-				}
-				else if(temp>k[i]->getnumAnimals()){
-				}
-				//find the one with the highest number and assign max val to that and if it is not then break and append to the Max collection
-				//maxPos=i;
-				//if(k[kill]->getnumAnimals()<k[i]->getnumAnimals()){
-				//	maxPos=i;
-				//}
-				//cout<<*k[i];
-			}
-			else{
-				kill=i;
-				cout<<maxPos<<endl;
-				//maxPos=i;
-				//append these values into the vector collection for maxVals of number of animals
-				//Max.push_back(k[maxPos]);
-				//cout<<maxPos<<endl;
-				//cout<<"updated kill - - ->"<<kill<<endl;
-			}
-		}
-		//kill++;
-	}
-	
-	cout<<"size of max "<<Max.size()<<endl;
-	//for(int i=0;i<Max.size();i++){
-		//k[i]->getRegion()
-	//	cout<<*Max[i];
-	//}
-	cout<<"blah"<<endl;*/
+
+
+
+
+
+
+
+
