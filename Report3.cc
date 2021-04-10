@@ -1,15 +1,38 @@
 #include <iostream>
 using namespace std;
-#include <string>
+#include <cstdlib>
+#include<iomanip>
+
+#include<vector>
+#include<iterator>
+#include <algorithm>
+#include<string>
 
 #include "Report3.h"
 #include "Record.h"
 
 Report3::Report3(){
-	cout<<"TEST 2 PASSED"<<endl;
+	cout<<"TEST 4 PASSED"<<endl;
+	l=new DescBehaviour<int>();
+	repo3=new ReportData<int>(l);
 }
 Report3::~Report3(){
+	//delete l;
+	delete repo3;
 	ReportGenerator::cleanUp();
+}
+
+void Report3::computeHelper(vector<Record*> a){
+
+	cout<<"HELPER FUNCITON"<<endl;
+	
+	cout<<a.size()<<endl;
+	
+	for(int i=0;i<a.size();i++){
+		max.push_back(a[i]);
+	}
+	cout<<max.size()<<endl;
+	
 }
 
 void Report3::compute(){
@@ -22,18 +45,19 @@ void Report3::compute(){
 	vector<Record*> k;
 	//int k=0;
 	//get all horse-ponies in the year 2016 and add to a separate vector
+	//maybe use an iterator?
+	//typename vector<Record*>::iterator itr;
 	for(int i=0;i<a.size();i++){
 		if(a[i]->getYear()==2016){
 			k.push_back(a[i]);	
-			//k++;
-			//a.erase(i);
 		}
 	}
+	computeHelper(k);
 	//get the size of k and all the region cuz we will be going through each and every value to find the maximum value
-	cout<<k.size()<<endl;
+	/*cout<<k.size()<<endl;
 	for(int i=0;i<k.size();i++){
 		cout<<*k[i];
-	}
+	}*/
 	cout<<endl;
 	//region  ||  sub region  || number of horse and ponies in that sub region
 	

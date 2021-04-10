@@ -2,13 +2,22 @@
 #define REPORT3_H
 
 #include<vector>
+#include<list>
 #include "ReportData.h"
 #include "ReportGenerator.h"
+#include "AscBehaviour.h"
+#include "DescBehaviour.h"
 
 class Report3:public ReportGenerator{
 
 	private:
 		ReportData<int>* repo3;
+		DescBehaviour<int>* l;
+		virtual void computeHelper(vector<Record*>);
+		//vector<Record*> a;
+		//collection containing all the regions with subregions that got largest number of horse's and ponies in that region 
+		vector<Record*> max;
+		//list<Record*> maxPonies;
 		
 	public:
 		//not specified but it is here anyway

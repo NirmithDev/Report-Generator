@@ -5,7 +5,7 @@ using namespace std;
 #include "Report3.h"
 
 int main(){
-	cout<<"TEST 1"<<endl;
+	cout<<"TEST 6"<<endl;
 	Report3 a;
 	a.compute();
 	return 0;
