@@ -33,11 +33,12 @@ void Report3::computeHelper(vector<Record*> e){
 	for(int i=0;i<e.size();i++){
 		//cout<<*e[i];
 		if(e[i]->getRegion()!="CAN" && e[i]->getsubRegion()!="All"){
-			cout<<*e[i];
-			for(int j=i+1;j<=e.size();j++){
+			//cout<<*e[i];
+			for(int j=i;j<=e.size();j++){
 				if(e[j]->getRegion()==e[i]->getRegion()){
 					cout<<"----------------";
-					cout<<*e[j];				
+					cout<<*e[j];
+					//find maximum num of animals of all within this for loops save the position and once it is false set the max Hor back to 0 let maxPos be as it is			
 				}
 				else{	
 					i=j-1;
