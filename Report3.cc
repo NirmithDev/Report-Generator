@@ -28,17 +28,22 @@ void Report3::computeHelper(vector<Record*> e){
 	
 	cout<<e.size()<<endl;
 	int j;
-	int maxHor=0;
+	//int maxHor=0;
 	int maxPos=0;
 	for(int i=0;i<e.size();i++){
 		//cout<<*e[i];
 		if(e[i]->getRegion()!="CAN" && e[i]->getsubRegion()!="All"){
 			//cout<<*e[i];
+			int maxHor=0;
 			for(int j=i;j<=e.size();j++){
 				if(e[j]->getRegion()==e[i]->getRegion()){
 					cout<<"----------------";
 					cout<<*e[j];
-					//find maximum num of animals of all within this for loops save the position and once it is false set the max Hor back to 0 let maxPos be as it is			
+					//find maximum num of animals of all within this for loops save the position and once it is false set the max Hor back to 0 let maxPos be as it is
+					if(maxHor<e[j]->getnumAnimals()){
+						maxHor=e[j]->getnumAnimals();
+						maxPos=j;
+					}			
 				}
 				else{	
 					i=j-1;
@@ -48,13 +53,18 @@ void Report3::computeHelper(vector<Record*> e){
 				//cout<<*e[j];
 			}		
 			//i=j;
-			cout<<"\n-----------------------------\n";
-			max.push_back(e[i]);
+			cout<<endl<<maxPos<<" - Count of horsie -"<<maxHor<<endl;
+			cout<<"-----------------------------\n";
+			max.push_back(e[maxPos]);
 			
 		}
 			
 		//}
 	}
+	//now for the all shizzle I am thinking a count so like say the ones without a subregion will have a count of 0 and it just got a all
+	
+	
+	
 	cout<<"\n\nMAX ARRAY TEST\n";
 	for(int i=0;i<max.size();i++){
 		cout<<*max[i];
