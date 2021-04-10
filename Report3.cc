@@ -24,9 +24,9 @@ Report3::~Report3(){
 
 void Report3::computeHelper(vector<Record*> e){
 
-	cout<<"HELPER FUNCITON"<<endl;
+	//cout<<"HELPER FUNCITON"<<endl;
 	
-	cout<<e.size()<<endl;
+	//cout<<e.size()<<endl;
 	int j;
 	//int maxHor=0;
 	int maxPos=0;
@@ -37,8 +37,8 @@ void Report3::computeHelper(vector<Record*> e){
 			int maxHor=0;
 			for(int j=i;j<=e.size();j++){
 				if(e[j]->getRegion()==e[i]->getRegion()){
-					cout<<"----------------";
-					cout<<*e[j];
+			//		cout<<"----------------";
+			//		cout<<*e[j];
 					//find maximum num of animals of all within this for loops save the position and once it is false set the max Hor back to 0 let maxPos be as it is
 					if(maxHor<e[j]->getnumAnimals()){
 						maxHor=e[j]->getnumAnimals();
@@ -53,17 +53,19 @@ void Report3::computeHelper(vector<Record*> e){
 				//cout<<*e[j];
 			}		
 			//i=j;
-			cout<<endl<<maxPos<<" - Count of horsie -"<<maxHor<<endl;
-			cout<<"-----------------------------\n";
+			//cout<<endl<<maxPos<<" - Count of horsie -"<<maxHor<<endl;
+			//cout<<"-----------------------------\n";
 			max.push_back(e[maxPos]);
 			
 		}
-			
-		//}
+		
 	}
 	//now for the all shizzle I am thinking a count so like say the ones without a subregion will have a count of 0 and it just got a all
-	
-	
+	for(int i=0;i<e.size();i++){
+		if(e[i]->getRegion()!="CAN"){
+			cout<<*e[i];
+		}
+	}
 	
 	//cout<<"\n\nMAX ARRAY TEST\n";
 	//for(int i=0;i<max.size();i++){
@@ -81,7 +83,7 @@ void Report3::compute(){
 	ReportGenerator::populate();
 	//get all horse-ponies from the animal type map
 	vector<Record*>& a=animalTypeMap["Horses-Ponies"];
-	cout<<a.size()<<endl;
+	//cout<<a.size()<<endl;
 	vector<Record*> k;
 	//int k=0;
 	//get all horse-ponies in the year 2016 and add to a separate vector
@@ -106,19 +108,22 @@ void Report3::compute(){
 
 void Report3::formatData(ReportData<int>* ab){
 	//compute();
-	cout<<"FORMATTING"<<endl;
-	cout<<max.size()<<endl;
+	//cout<<"FORMATTING"<<endl;
+	//cout<<max.size()<<endl;
 	for(int i=0;i<max.size();i++){
 		//cout<<*max[i];
 		stringstream ss;
-		ss<<*max[i];
+		ss<<max[i]->getYear()<<"   "<<setw(40)<<left<<max[i]->getsubRegion()<<"   "<<setw(6)<<right<<max[i]->getnumAnimals()<<endl;
 		//cout<<max[i]->getnumAnimals()<<endl;
 		ab->add(max[i]->getnumAnimals(),ss.str());
 	}
 }
 
 void Report3::printReport(ReportData<int>* k){
+	cout<<"\n\t SUB-REGION WITH MOST HORSES/PONIES BY REGION IN 2016\t\t\n";
+	cout<<"\t------------------------------------------------------\n";
 	cout<<*k;
+	//now write into the file
 }
 
 

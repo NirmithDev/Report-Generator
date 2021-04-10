@@ -39,6 +39,6 @@ string Record::getanimalType(){
 }
 
 ostream& operator<<(ostream& out, Record& r){
-	out<<r.year<<" - "<<r.region<<" - "<<r.animalType<<" - "<<r.subRegion<<" - "<<r.numFarms<<" - "<<r.numAnimals<<"\n";
+	out<<setw(4)<<r.year<<"  "<<setw(10)<<r.region<<"  "<<setw(20)<<r.animalType<<" - "<<r.subRegion<<" - "<<r.numFarms<<" - "<<r.numAnimals<<"\n";
 	return out;
 }

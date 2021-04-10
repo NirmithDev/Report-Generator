@@ -111,7 +111,7 @@ void ReportData<T>::add(T key, string row){
 template <class T>
 ostream& operator<<(ostream& out,const ReportData<T>& a){	
 	for(int i=0;i<a.collec.size();i++){
-		out<<a.collec[i].row;
+		out<<"\t"<<a.collec[i].row;
 	}
 	return out;
 }
