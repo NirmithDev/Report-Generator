@@ -29,7 +29,9 @@ void Report3::computeHelper(vector<Record*> a){
 	cout<<a.size()<<endl;
 	
 	for(int i=0;i<a.size();i++){
-		max.push_back(a[i]);
+		if(a[i]->getRegion()!="CAN"){
+			max.push_back(a[i]);
+		}
 	}
 	cout<<max.size()<<endl;
 	
