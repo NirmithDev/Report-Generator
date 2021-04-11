@@ -12,6 +12,7 @@ class Report3:public ReportGenerator{
 	private:
 		ReportData<int>* repo3;
 		DescBehaviour<int>* l;
+		int cou=0;
 		virtual void computeHelper(vector<Record*>);
 		//vector<Record*> a;
 		//collection containing all the regions with subregions that got largest number of horse's and ponies in that region 

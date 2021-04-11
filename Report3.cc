@@ -17,6 +17,7 @@ Report3::Report3(){
 	cout<<"TEST 4 PASSED"<<endl;
 	l=new DescBehaviour<int>();
 	repo3=new ReportData<int>(l);
+	ReportGenerator::populate();
 }
 Report3::~Report3(){
 	//delete l;
@@ -33,6 +34,7 @@ void Report3::computeHelper(vector<Record*> e){
 	//cout<<"HELPER FUNCITON"<<endl;
 	
 	//cout<<e.size()<<endl;
+//	if(cou<1){
 	int j;
 	//int maxHor=0;
 	int maxPos=0;
@@ -91,7 +93,8 @@ void Report3::computeHelper(vector<Record*> e){
 			//cout<<"count ->"<<count<<"\n----------------\n";
 		}
 	}
-
+	//}
+	//cou++;
 	formatData(repo3);
 	printReport(repo3);
 }
@@ -100,7 +103,7 @@ void Report3::computeHelper(vector<Record*> e){
 void Report3::compute(){
 	cout<<"I WAS CALLED\n";
 	//populate the data
-	ReportGenerator::populate();
+	//ReportGenerator::populate();
 	//get all horse-ponies from the animal type map
 	vector<Record*>& a=animalTypeMap["Horses-Ponies"];
 	//cout<<a.size()<<endl;
