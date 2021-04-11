@@ -20,7 +20,11 @@ Report3::Report3(){
 }
 Report3::~Report3(){
 	//delete l;
+	///for(int i=0;i<max.size();i++){
+	//	delete max[i];
+	//}
 	delete repo3;
+	//max.clear();
 	ReportGenerator::cleanUp();
 }
 
@@ -123,6 +127,9 @@ void Report3::compute(){
 }
 
 void Report3::formatData(ReportData<int>* ab){
+	cout<<max.size();
+	//handle the duplicates formed and update the vector
+	
 	for(int i=0;i<max.size();i++){
 		//cout<<*max[i];
 		stringstream ss;
@@ -137,6 +144,9 @@ void Report3::formatData(ReportData<int>* ab){
 			ab->add(max[i]->getnumAnimals(),ss.str());
 		}
 	}
+	//max.clear();
+	//max.clear();
+	
 }
 
 void Report3::printReport(ReportData<int>* k){
@@ -156,6 +166,7 @@ void Report3::printReport(ReportData<int>* k){
   	outfile<<*k;
   	outfile<<"\t------------------------------------------------------\n";
   	outfile<<endl;
+  	
 }
 
 
