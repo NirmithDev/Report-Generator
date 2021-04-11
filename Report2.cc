@@ -13,6 +13,8 @@ using namespace std;
 #include "Report2.h"
 #include "Record.h"
 
+//RESTART
+
 Report2::Report2(){
 	cout<<"TEST 5 PASSED"<<endl;
 	l=new AscBehaviour<float>();
