@@ -1,24 +1,25 @@
-#ifndef REPORT2_H
-#define REPORT2_H
+#ifndef REPORT1_H
+#define REPORT1_H
 
 #include<vector>
 #include<list>
 #include "ReportGenerator.h"
-#include "AscBehaviour.h"
+
+
 //#include "ReportData.h"
 
-class Report2:public ReportGenerator{
+class Report1:public ReportGenerator{
 
 	private:
-		ReportData<float>* repo2;
-		AscBehaviour<float>* l;
+		ReportData<float>* repo1;
+		DescBehaviour<float>* l;
 		vector<Record*> perc;
-		virtual void computeHelper(vector<Record*>,vector<Record*>,int,int);
+		//virtual void computeHelper(vector<Record*>,vector<Record*>,int,int);
 		
 		
 	public:
-		Report2();
-		virtual ~Report2();
+		Report1();
+		virtual ~Report1();
 		//the function to populate the maps and census collection
 		//static void populate();
 		virtual void compute();
@@ -31,9 +32,3 @@ class Report2:public ReportGenerator{
 };
 
 #endif
-
-//virtual void computeHelper(vector<Record*>);
-		//vector<Record*> a;
-		//collection containing all the regions with subregions that got largest number of horse's and ponies in that region 
-		//vector<Record*> max;
-		//list<Record*> maxPonies;

@@ -5,6 +5,7 @@
 #include "Record.h"
 #include "Map.h"
 #include "ReportData.h"
+#include "DescBehaviour.h"
 
 class ReportGenerator{
 

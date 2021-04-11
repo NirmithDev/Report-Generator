@@ -15,7 +15,7 @@ class Map{
 	public:
 		void add(T,Record*);
 		int getKeySize();
-		T& getKeys();
+		vector<T>& getKeys();
 		vector<Record*>& operator[](T);
 		//vector<Record*> operator=(const Record) 
 };
@@ -62,8 +62,8 @@ int Map<T>::getKeySize(){
 }
 
 template <class T>
-T& Map<T>::getKeys(){
-	return *keys;
+vector<T>& Map<T>::getKeys(){
+	return keys;
 }
 
 template <class T>
