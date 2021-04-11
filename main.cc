@@ -10,20 +10,20 @@ using namespace std;
 int main(){
 	cout<<"TEST 6"<<endl;
 	
-	//Report2 c;
+	Report2 c;
 	//c->compute();
 	int a;
 	cin>>a;
 	Report3 b;
 	while(a!=0){
 		//Report3* b=new Report3();
-		//if(a<5){
-		//c.compute();
-		//}
-		//else{
+		if(a<5){
+		c.compute();
+		}
+		else{
 		b.compute();
 		//delete b;
-		//}
+		}
 		cin>>a;
 	}
 	//Report3* b=new Report3();

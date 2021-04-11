@@ -23,7 +23,7 @@ Report2::Report2(){
 Report2::~Report2(){
 	//delete l;
 	delete repo2;
-	ReportGenerator::cleanUp();
+	//ReportGenerator::cleanUp();
 }
 
 void Report2::computeHelper(vector<Record*> lm,vector<Record*> ml, int sum2011, int sum2016){
