@@ -21,7 +21,7 @@ Report1::Report1(){
 Report1::~Report1(){
 	//delete l;
 	delete repo1;
-	ReportGenerator::cleanUp();
+	//ReportGenerator::cleanUp();
 }
 
 void Report1::compute(){
@@ -65,6 +65,23 @@ void Report1::compute(){
 	
 	//string stream all the calculations together and add it to a vector of collections 
 }
+
+/*
+
+for(int i=0;i<perc.size();i++){
+		cout<<endl;
+		for(int j=i;j<=perc.size();j++){
+			if(perc[i]->getRegion()==perc[j]->getRegion()){
+				cout<<"------------------";
+				cout<<*perc[j];
+			}
+			else{
+				i=j-1;
+				break;
+			}
+		}
+	}
+*/
 
 void Report1::formatData(ReportData<float>* k){}
 

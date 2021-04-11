@@ -8,14 +8,16 @@ using namespace std;
 
 int main(){
 	cout<<"TEST 6"<<endl;
-	Report1* a=new Report1();
-	a->compute();
-	delete a;
-	//Report3* a=new Report3();
+	//Report1* a=new Report1();
 	//a->compute();
-	//Report2* b=new Report2();
-//	b->compute();
 	//delete a;
+	//Report3* b=new Report3();
+	//b->compute();
+	Report2* c=new Report2();
+	c->compute();
+	//Report3* b=new Report3();
+	//b->compute();
+	delete c;
 	//delete b;
 	return 0;
 }

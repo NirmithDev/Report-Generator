@@ -21,7 +21,7 @@ Report2::Report2(){
 Report2::~Report2(){
 	//delete l;
 	delete repo2;
-	ReportGenerator::cleanUp();
+	//ReportGenerator::cleanUp();
 }
 
 void Report2::computeHelper(vector<Record*> lm,vector<Record*> ml, int sum2011, int sum2016){
@@ -66,6 +66,7 @@ void Report2::compute(){
 	//for(int i=0;i<k.size();i++){
 	//	cout<<*k[i];
 //	}
+	cout<<m.size()<<endl;
 	cout<<endl;
 //	for(int i=0;i<m.size();i++){
 //		cout<<*m[i];
