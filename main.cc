@@ -10,22 +10,27 @@ using namespace std;
 int main(){
 	cout<<"TEST 6"<<endl;
 	
-	//Report2* c=new Report2();
+	Report2* c=new Report2();
 	//c->compute();
 	int a;
 	cin>>a;
-	Report3* b=new Report3();
+	Report3 b;
 	while(a!=0){
 		//Report3* b=new Report3();
-		b->compute();
+		if(a<5){
+		c->compute();
+		}
+		else{
+		b.compute();
 		//delete b;
+		}
 		cin>>a;
 	}
 	//Report3* b=new Report3();
 	//b->compute();
 	//Report1* a=new Report1();
 	//a->compute();
-	delete b;
+	//delete b;
 	//delete c;
 	
 	

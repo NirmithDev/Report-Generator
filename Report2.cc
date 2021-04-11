@@ -42,7 +42,7 @@ void Report2::computeHelper(vector<Record*> lm,vector<Record*> ml, int sum2011, 
 void Report2::compute(){
 
 	//take data from the year maps and use the populate function first
-	ReportGenerator::populate();
+	//ReportGenerator::populate();
 	//year map
 	vector<Record*>& a=yearMap[2011];
 	cout<<a.size()<<endl;

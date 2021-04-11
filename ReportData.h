@@ -31,10 +31,12 @@ class ReportData{
 	private:
 		vector<ReportRow<T>> collec;
 		CompareBehaviour<T>* comp;
+		
 	public:
 		ReportData(CompareBehaviour<T>*);
 		~ReportData();
 		int getSize();
+		void CLEAN();
 		void print();
 		vector<ReportRow<T>>& getCollec();
 		void add(T,string);
@@ -68,6 +70,12 @@ ReportData<T>::~ReportData(){
 //destroy something idk
 	delete comp;
 }
+
+template <class T>
+void ReportData<T>::CLEAN(){
+	collec.clear();
+}
+
 
 template <class T>
 void ReportData<T>::add(T key, string row){

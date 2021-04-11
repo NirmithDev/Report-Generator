@@ -13,11 +13,12 @@ class Report3:public ReportGenerator{
 		ReportData<int>* repo3;
 		DescBehaviour<int>* l;
 		int cou=0;
-		virtual void computeHelper(vector<Record*>);
+		virtual void computeHelper(vector<Record*>&);
+		//vector<Record*>& a=animalTypeMap["Horses-Ponies"];
 		//vector<Record*> a;
 		//collection containing all the regions with subregions that got largest number of horse's and ponies in that region 
-		 vector<Record*> max;
-		//list<Record*> maxPonies;
+		vector<Record*> max;
+		list<Record*> maxPonies;
 		
 	public:
 		//not specified but it is here anyway
