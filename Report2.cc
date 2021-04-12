@@ -23,6 +23,10 @@ Report2::Report2(){
 Report2::~Report2(){
 	//delete l;
 	delete repo2;
+	//if(ne!=NULL){
+	//	delete ne;
+	//}
+	//delete ne;
 	//ReportGenerator::cleanUp();
 }
 
@@ -43,25 +47,19 @@ void Report2::computeHelper(vector<Record*> lm,vector<Record*> ml, int sum2011, 
 
 void Report2::compute(){
 
-	//take data from the year maps and use the populate function first
-	//ReportGenerator::populate();
-	//year map
-	//vector<Record*>& a=yearMap[2011];
-	//cout<<a.size()<<endl;
-	//	figure out how to get a for loop for the name of animals
-	//vector<Record*>& b=yearMap[2016];
-	//vector<vector<Record*>> collc;
 	collc.clear();
 	vector<string> key=animalTypeMap.getKeys();
 	cout<<key.size()<<endl;
 	//printing out all the animal keys
 	int sum2011=0;
 	int sum2016=0;
+	//vector<Record*> temp;
 	for(int i=0;i<key.size();i++){
 		cout<<key[i]<<endl;
 		vector<Record*> temp;
 		vector<Record*>& a=yearMap[2011];
 		vector<Record*>& b=yearMap[2016];
+		//first condition is 2011 
 		for(int j=0;j<a.size();j++){
 			//check if it exists 
 			if(a[j]->getanimalType()==key[i] && a[j]->getRegion()=="CAN"){
@@ -70,6 +68,10 @@ void Report2::compute(){
 				sum2011+=a[j]->getnumAnimals();
 			}
 		}//cout<<endl;
+		if(temp.size()==0){
+			//ne=new Record(2011,"CAN",0,0,"All",key[i]);
+			temp.push_back(new Record(2011,"CAN",0,0,"All",key[i]));
+		}
 		for(int j=0;j<b.size();j++){
 			if(b[j]->getanimalType()==key[i] && b[j]->getRegion()=="CAN"){
 		//		cout<<*b[j]<<endl;
@@ -77,79 +79,49 @@ void Report2::compute(){
 				sum2016+=b[j]->getnumAnimals();
 			}
 		}
-		
-		//cout<<"\n---------------------TEMP-------------------\n";
-		
-		//for(int z=0;z<temp.size();z++){
-		//	cout<<*temp[z];
-		//}
-		//cout<<endl;
+		if(temp.size()==1){
+			if(temp[0]->getYear()==2011){
+				//ne=new Record(2016,"CAN",0,0,"All",key[i]);
+				temp.push_back(new Record(2016,"CAN",0,0,"All",key[i]));
+
+			}else{
+				//ne=new Record(2011,"CAN",0,0,"All",key[i]);
+				temp.push_back(new Record(2011,"CAN",0,0,"All",key[i]));
+
+			}
+		}
+		//for(int j=0;j<temp.size();j++){}
 		collc.push_back(temp);
 	}
 	cout<<"TOTAL IN 2011 ------->"<<sum2011<<endl;
 	cout<<"TOTAL IN 2016 ------->"<<sum2016<<endl;
-	formatData(repo2);
-	//cout<<"SIZE OF TESTER ------>"<<collc.size()<<endl;
-	//for(int i=0;i<collc.size();i++){
-	//	for(int j=0;j<collc[i].size();j++){
-	//		cout<<*collc[i][j];
-	//	}
-	//	cout<<endl;
-		//cout<<collc[i];
-	//}
-	//vector<Record*> k;
-	/*for(int i=0;i<a.size();i++){
-		if(a[i]->getRegion()=="CAN"){
-			k.push_back(a[i]);
-		}
-	}
-	vector<Record*> m;
-	for(int i=0;i<b.size();i++){
-		if(b[i]->getRegion()=="CAN"){
-			m.push_back(b[i]);
-		}
-	}
-	
-	cout<<k.size()<<endl;
-	//for(int i=0;i<k.size();i++){
-	//	cout<<*k[i];
-//	}
-	cout<<m.size()<<endl;
-	cout<<endl;
-//	for(int i=0;i<m.size();i++){
-//		cout<<*m[i];
-//	}
-	int sum2011=0;
-	
-	for(int i=0;i<k.size();i++){
-		sum2011+=k[i]->getnumAnimals();
-	}
-	cout<<sum2011<<endl;
-	
-	
-	int sum2016=0;
-	for(int i=0;i<m.size();i++){
-		sum2016+=m[i]->getnumAnimals();	
-	}
-	cout<<sum2016<<endl;
-	computeHelper(m,k,sum2011,sum2016);
-	*/
-	
+	formatData(repo2);	
 
 }
 
-void Report2::formatData(ReportData<float>*){
-	//for(int i=0;i<collc.size();i++){
-	//	for(int j=0;j<collc[i].size();j++){
-	//		cout<<*collc[i][j];
-	//	}
-	//	cout<<endl;
-		//cout<<collc[i];
-	//}
+void Report2::formatData(ReportData<float>* c){
+	for(int i=0;i<collc.size();i++){
+		for(int j=0;j<collc[i].size();j++){
+			cout<<*collc[i][j];
+		}
+		cout<<endl;
+	}
 	//time for format data
+	for(int i=0;i<collc.size();i++){
+		stringstream ss;
+		for(int j=0;j<collc[i].size();j++){
+			ss<<collc[i][j]->getanimalType()<<"\t\t";
+			
+		}
+		ss<<endl;
+		cout<<ss.str();
+	}
+	//cout<<ss.str();
 }
 
-void Report2::printReport(ReportData<float>*){}
+void Report2::printReport(ReportData<float>* c){
+	//cout<<
+}
 
 
 

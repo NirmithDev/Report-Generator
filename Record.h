@@ -10,7 +10,7 @@ class Record
 		int getYear();
 		int getnumAnimals();
 		int getnumFarms();
-		
+		~Record();
 		string getRegion();
 		string getanimalType();
 		string getsubRegion();

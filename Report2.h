@@ -15,6 +15,7 @@ class Report2:public ReportGenerator{
 		vector<Record*> perc;
 		vector<vector<Record*>> collc;
 		virtual void computeHelper(vector<Record*>,vector<Record*>,int,int);
+		Record* ne;
 		
 		
 	public:

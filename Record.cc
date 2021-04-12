@@ -13,7 +13,7 @@ Record::Record(int a, string b, int c,int d,string e,string f){
 	subRegion=e;
 	animalType=f;
 }
-
+Record::~Record(){}
 int Record::getYear(){
 	return year;
 }
