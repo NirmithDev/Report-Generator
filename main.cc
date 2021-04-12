@@ -10,18 +10,18 @@ using namespace std;
 int main(){
 	cout<<"TEST 6"<<endl;
 	
-	Report2 c;
+	Report2* c=new Report2();
 	//c->compute();
 	int a;
 	cin>>a;
-	Report3 b;
+	Report3* b=new Report3();
 	while(a!=0){
 		//Report3* b=new Report3();
 		if(a<5){
-		c.compute();
+		c->compute();
 		}
 		else{
-		b.compute();
+		b->compute();
 		//delete b;
 		}
 		cin>>a;
@@ -30,8 +30,8 @@ int main(){
 	//b->compute();
 	//Report1* a=new Report1();
 	//a->compute();
-	//delete b;
-	//delete c;
+	delete b;
+	delete c;
 	
 	
 	return 0;
