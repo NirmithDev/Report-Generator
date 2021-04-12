@@ -26,7 +26,12 @@ Report1::~Report1(){
 }
 
 void Report1::compute(){
-	//ReportGenerator::populate();
+	
+	
+}
+
+/*
+//ReportGenerator::populate();
 	//region map each region gets its own map?
 	//AB gets 
 	//vector<Record*>& AB= regionMap["AB"];
@@ -87,8 +92,8 @@ void Report1::compute(){
 		//}		
 	}
 	
-	
-}
+
+*/
 
 /*for(int j=0;j<t.size();j++){
 			if(t[j]->getYear()==2016  && t[j]->getsubRegion()=="All"){
