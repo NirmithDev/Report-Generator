@@ -49,13 +49,13 @@ void Report2::compute(){
 
 	collc.clear();
 	vector<string> key=animalTypeMap.getKeys();
-	cout<<key.size()<<endl;
+	//cout<<key.size()<<endl;
 	//printing out all the animal keys
 	int sum2011=0;
 	int sum2016=0;
 	//vector<Record*> temp;
 	for(int i=0;i<key.size();i++){
-		cout<<key[i]<<endl;
+		//cout<<key[i]<<endl;
 		vector<Record*> temp;
 		vector<Record*>& a=yearMap[2011];
 		vector<Record*>& b=yearMap[2016];
@@ -95,54 +95,87 @@ void Report2::compute(){
 	}
 	cout<<"TOTAL IN 2011 ------->"<<sum2011<<endl;
 	cout<<"TOTAL IN 2016 ------->"<<sum2016<<endl;
-	formatData(repo2);	
+	formatData(repo2,sum2011,sum2016);
+	printReport(repo2);	
 
 }
 
-void Report2::formatData(ReportData<float>* c){
-	for(int i=0;i<collc.size();i++){
-		for(int j=0;j<collc[i].size();j++){
-			cout<<*collc[i][j];
-		}
-		cout<<endl;
-	}
+void Report2::formatData(ReportData<float>* cb,int sum2011,int sum2016){
 	//time for format data
+	vector<vector<float>> lls;
 	for(int i=0;i<collc.size();i++){
-		stringstream ss;
+		//stringstream ss;
+		//ss<<collc[i][0]->getanimalType()<<"\t\t\t";
+		float tel;
+		vector<float> ttl;
 		for(int j=0;j<collc[i].size();j++){
-			ss<<collc[i][j]->getanimalType()<<"\t\t";
+			//vector<int> ttl;
+			if(collc[i][j]->getYear()==2011){
+				//vector<int> ttl;
+				
+				tel= 100*(collc[i][j]->getnumAnimals())/(float)sum2011;
+				ttl.push_back(tel);
+			}
+			else{
+				//vector<int> ttl;
+				tel= 100*(collc[i][j]->getnumAnimals())/(float)sum2016;
+				ttl.push_back(tel);
+			}
+			//lls.push_back(ttl);
+			//int tel= 100*(collc[i][j]->getnumAnimals())/
+		//	ss<<tel<<"\t\t";
 			
 		}
-		ss<<endl;
-		cout<<ss.str();
+		lls.push_back(ttl);
+		//ss<<endl;
+		//cout<<ss.str();
+	}
+	
+	for(int i=0;i<collc.size();i++){
+		//cout<<lls[i].size()<<endl;
+		stringstream ss;
+		float percDiff=0;
+		ss<<setw(20)<<right<<collc[i][0]->getanimalType()<<"";
+		//cout<<ss.str()<<endl;
+		for(int j=0;j<lls[i].size();j++){
+			ss<<"   "<< setw(7)<<right<<setprecision (1)<<fixed<<lls[i][j];
+			if(j>0){
+				//cout<<"------yeah we here"<<endl;
+				percDiff=lls[i][j]-lls[i][j-1];
+			}
+			//cout<<endl;
+		}
+		if(percDiff<0){
+			ss<<"   "<< setw(7)<<right<<setprecision (1)<<fixed<<percDiff<<endl;
+			cb->add(percDiff,ss.str());
+		}else{
+			ss<<"   "<< setw(4)<<right<<setprecision (1)<<fixed<<"+"<<percDiff<<endl;
+			cb->add(percDiff,ss.str());
+		}
+		//cout<<ss.str();
 	}
 	//cout<<ss.str();
+	
 }
 
 void Report2::printReport(ReportData<float>* c){
-	//cout<<
+	
+	cout<<"\n\t \tPERCENTAGE CHANGE OF ANIMALS (2011-2016)\t\t\n";
+	cout<<"\t---------------------------------------------------------\n";
+	cout<<"\t\t ANIMAL TYPE\t  2011\t    2016     Change"<<endl<<endl;
+	cout<<*c;
+	cout<<"\t---------------------------------------------------------\n";
+	//write into file
+	ofstream outfile("Report2.txt",ios::out);
+	if (!outfile) {
+    		cout << "Error:  could not open file" << endl;
+    		exit(1);
+  	}
+	outfile<<"\n\t \tPERCENTAGE CHANGE OF ANIMALS (2011-2016)\t\t\n";
+	outfile<<"\t---------------------------------------------------------\n";
+	outfile<<"\t\t ANIMAL TYPE\t  2011\t    2016     Change"<<endl<<endl;
+	outfile<<*c;
+	outfile<<"\t---------------------------------------------------------\n";
+	repo2->CLEAN();
 }
 
-
-
-/*if(m.size()<k.size()){
-		cout<<"2016 is smaller"<<endl;
-		for(int i=0;i<k.size();i++){
-			//cout<<*k[i];
-			
-		}
-		
-	}
-	else if(m.size()>k.size()){
-		cout<<"2011 is smaller"<<endl;
-	}*/
-	//calculation of percentage of shizzle for 2011
-	//float per=0.00;
-	/*for(int i=0;i<k.size();i++){
-		//cout<<sum2011<<endl;
-		//cout<<"  ->"<<k[i]->getnumAnimals()<<"   -";
-		float per=100*k[i]->getnumAnimals()/(float)sum2011;
-		cout<<k[i]->getanimalType()<<"    ->"<<per;
-		cout<<endl;
-//		cout<<k[i]->getanimalType()<<"  -  "<<per<<endl;
-	}*/
