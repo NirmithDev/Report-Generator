@@ -53,10 +53,11 @@ void Report2::compute(){
 	//printing out all the animal keys
 	int sum2011=0;
 	int sum2016=0;
-	//vector<Record*> temp;
+	vector<Record*> temp;
 	for(int i=0;i<key.size();i++){
+		temp.clear();
 		//cout<<key[i]<<endl;
-		vector<Record*> temp;
+		//vector<Record*> temp;
 		vector<Record*>& a=yearMap[2011];
 		vector<Record*>& b=yearMap[2016];
 		//first condition is 2011 
@@ -68,10 +69,11 @@ void Report2::compute(){
 				sum2011+=a[j]->getnumAnimals();
 			}
 		}//cout<<endl;
-		if(temp.size()==0){
+		//if(temp.size()==0){
 			//ne=new Record(2011,"CAN",0,0,"All",key[i]);
-			temp.push_back(new Record(2011,"CAN",0,0,"All",key[i]));
-		}
+		//	temp.push_back(new Record(2011,"CAN",0,0,"All",key[i]));
+		//}
+		//2016
 		for(int j=0;j<b.size();j++){
 			if(b[j]->getanimalType()==key[i] && b[j]->getRegion()=="CAN"){
 		//		cout<<*b[j]<<endl;
@@ -92,6 +94,10 @@ void Report2::compute(){
 		}
 		//for(int j=0;j<temp.size();j++){}
 		collc.push_back(temp);
+		//temp.clear();
+		//for(int j=0;j<temp.size();j++){
+			//delete temp[i];
+		//}
 	}
 	cout<<"TOTAL IN 2011 ------->"<<sum2011<<endl;
 	cout<<"TOTAL IN 2016 ------->"<<sum2016<<endl;

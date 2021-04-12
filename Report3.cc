@@ -161,30 +161,13 @@ void Report3::computeHelper(vector<Record*>& e){
 
 void Report3::compute(){
 	cout<<"I WAS CALLED\n";
-	//populate the data
-	//ReportGenerator::populate();
-	//get all horse-ponies from the animal type map
+	
 	vector<Record*>& a=animalTypeMap["Horses-Ponies"];
-	//cout<<a.size()<<endl;
-	//vector<Record*> k;
-	//int k=0;
-	//get all horse-ponies in the year 2016 and add to a separate vector
-	//maybe use an iterator?
-	//typename vector<Record*>::iterator itr;
-	//for(int i=0;i<a.size();i++){
-	//	if(a[i]->getYear()==2016){
-	//		k.push_back(a[i]);	
-	//	}
-	//}
+	
 	computeHelper(a);
-	//get the size of k and all the region cuz we will be going through each and every value to find the maximum value
-	/*cout<<k.size()<<endl;
-	for(int i=0;i<k.size();i++){
-		cout<<*k[i];
-	}*/
+	
 	cout<<endl;
-	//region  ||  sub region  || number of horse and ponies in that sub region
-	//formatData(repo3);
+	
 	
 }
 
