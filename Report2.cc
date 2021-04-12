@@ -50,7 +50,8 @@ void Report2::compute(){
 	cout<<a.size()<<endl;
 	vector<Record*>& b=yearMap[2016];
 	cout<<b.size()<<endl;
-	
+//	figure out how to get a for loop for the name of animals
+	//
 	vector<Record*> k;
 	for(int i=0;i<a.size();i++){
 		if(a[i]->getRegion()=="CAN"){

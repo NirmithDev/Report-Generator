@@ -5,7 +5,7 @@ using namespace std;
 //#include "ReportGenerator.h"
 #include "Report3.h"
 #include "Report2.h"
-//#include "Report1.h"
+#include "Report1.h"
 
 int main(){
 	cout<<"TEST 6"<<endl;
