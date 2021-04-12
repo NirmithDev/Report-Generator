@@ -46,14 +46,59 @@ void Report2::compute(){
 	//take data from the year maps and use the populate function first
 	//ReportGenerator::populate();
 	//year map
-	vector<Record*>& a=yearMap[2011];
-	cout<<a.size()<<endl;
-	vector<Record*>& b=yearMap[2016];
-	cout<<b.size()<<endl;
-//	figure out how to get a for loop for the name of animals
-	//
-	vector<Record*> k;
-	for(int i=0;i<a.size();i++){
+	//vector<Record*>& a=yearMap[2011];
+	//cout<<a.size()<<endl;
+	//	figure out how to get a for loop for the name of animals
+	//vector<Record*>& b=yearMap[2016];
+	//vector<vector<Record*>> collc;
+	collc.clear();
+	vector<string> key=animalTypeMap.getKeys();
+	cout<<key.size()<<endl;
+	//printing out all the animal keys
+	int sum2011=0;
+	int sum2016=0;
+	for(int i=0;i<key.size();i++){
+		cout<<key[i]<<endl;
+		vector<Record*> temp;
+		vector<Record*>& a=yearMap[2011];
+		vector<Record*>& b=yearMap[2016];
+		for(int j=0;j<a.size();j++){
+			//check if it exists 
+			if(a[j]->getanimalType()==key[i] && a[j]->getRegion()=="CAN"){
+		//		cout<<*a[j];
+				temp.push_back(a[j]);
+				sum2011+=a[j]->getnumAnimals();
+			}
+		}//cout<<endl;
+		for(int j=0;j<b.size();j++){
+			if(b[j]->getanimalType()==key[i] && b[j]->getRegion()=="CAN"){
+		//		cout<<*b[j]<<endl;
+				temp.push_back(b[j]);				
+				sum2016+=b[j]->getnumAnimals();
+			}
+		}
+		
+		//cout<<"\n---------------------TEMP-------------------\n";
+		
+		//for(int z=0;z<temp.size();z++){
+		//	cout<<*temp[z];
+		//}
+		//cout<<endl;
+		collc.push_back(temp);
+	}
+	cout<<"TOTAL IN 2011 ------->"<<sum2011<<endl;
+	cout<<"TOTAL IN 2016 ------->"<<sum2016<<endl;
+	formatData(repo2);
+	//cout<<"SIZE OF TESTER ------>"<<collc.size()<<endl;
+	//for(int i=0;i<collc.size();i++){
+	//	for(int j=0;j<collc[i].size();j++){
+	//		cout<<*collc[i][j];
+	//	}
+	//	cout<<endl;
+		//cout<<collc[i];
+	//}
+	//vector<Record*> k;
+	/*for(int i=0;i<a.size();i++){
 		if(a[i]->getRegion()=="CAN"){
 			k.push_back(a[i]);
 		}
@@ -88,12 +133,21 @@ void Report2::compute(){
 	}
 	cout<<sum2016<<endl;
 	computeHelper(m,k,sum2011,sum2016);
-	
+	*/
 	
 
 }
 
-void Report2::formatData(ReportData<float>*){}
+void Report2::formatData(ReportData<float>*){
+	//for(int i=0;i<collc.size();i++){
+	//	for(int j=0;j<collc[i].size();j++){
+	//		cout<<*collc[i][j];
+	//	}
+	//	cout<<endl;
+		//cout<<collc[i];
+	//}
+	//time for format data
+}
 
 void Report2::printReport(ReportData<float>*){}
 

@@ -80,32 +80,7 @@ void Report3::computeHelper(vector<Record*>& e){
 			}
 		}
 	}
-	/*
-	for(int i=0;i<e.size();i++){
-	int count=0;
-		if(e[i]->getRegion()!="CAN"){
-			//cout<<*e[i];
-			for(int j=i;j<e.size();j++){
-				if(e[j]->getRegion()==e[i]->getRegion()){
-					//cout<<"----------------";
-					//cout<<*e[j];
-					count++;
-				}
-				else{
-					i=j-1;
-					break;
-				}
-				//cout<<"\n----------------\n";
-			}
-			if(count==1){
-				//cout<<"--------------------";
-				//cout<<*e[i];
-				max.push_back(e[i]);
-				//maxPonies.push_back(e[i]);
-			}
-			//cout<<"count ->"<<count<<"\n----------------\n";
-		}
-	}*/
+	
 	
 	for(int i=0;i<max.size();i++){
 		cout<<*max[i];
@@ -217,11 +192,11 @@ void Report3::formatData(ReportData<int>* ab){
 	cout<<max.size();
 	//use a list and try
 	
-	list<Record*>::iterator itr;
-	for(itr=maxPonies.begin();itr!=maxPonies.end();itr++){
-		cout<<**itr;
-		cout<<endl;
-		stringstream ss;
+	//list<Record*>::iterator itr;
+	//for(itr=maxPonies.begin();itr!=maxPonies.end();itr++){
+	//	cout<<**itr;
+	//	cout<<endl;
+	//	stringstream ss;
 		//cout<<*itr->getsubRegion()<<endl;
 		/*if(itr->getsubRegion()=="All"){
 			ss<<max[i]->getRegion()<<"   "<<setw(40)<<left<<"  "<<"  "<<setw(7)<<right<<0<<endl;
@@ -233,7 +208,7 @@ void Report3::formatData(ReportData<int>* ab){
 		//cout<<max[i]->getnumAnimals()<<endl;
 			ab->add(max[i]->getnumAnimals(),ss.str());
 		}*/
-	}
+	//}
 	
 	for(int i=0;i<max.size();i++){
 		//cout<<*max[i];

@@ -13,6 +13,7 @@ class Report2:public ReportGenerator{
 		ReportData<float>* repo2;
 		AscBehaviour<float>* l;
 		vector<Record*> perc;
+		vector<vector<Record*>> collc;
 		virtual void computeHelper(vector<Record*>,vector<Record*>,int,int);
 		
 		
