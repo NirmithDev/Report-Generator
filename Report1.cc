@@ -70,7 +70,7 @@ void Report1::compute(){
 	//we need to divide each animal with that type
 	//so a iterator thru each city and in each city divide all the animals and append to my 2d collection for later on processing
 	//if sum or number of that animal is a 0 then we just append a 0 otherwise we do the above mentioned
-	
+	vector<vector<float>> col;
 	vector<string> key=regionMap.getKeys();
 	for(int i=0;i<key.size();i++){
 		if(key[i]!="CAN"){
@@ -79,6 +79,7 @@ void Report1::compute(){
 			//cout<<b.size()<<endl;
 			//segregate the 2011 and 2016
 			vector<Record*> te;
+			vector<float> temp;
 			for(int j=0;j<b.size();j++){
 				if(b[j]->getYear()!=2011 && b[j]->getsubRegion()=="All"){
 					te.push_back(b[j]);
@@ -86,17 +87,10 @@ void Report1::compute(){
 			}
 			for(int j=0;j<te.size();j++){
 				cout<<*te[j];
-				cout<<"Total Sum of animal ------>"<<sumEach[j]<<endl;
+				//calculate the percentage of the animal in the whole thingy and then append to it
+				float temmmm=100*(te[j]->getnumAnimals()/float(sumEach[j]));
+				cout<<"Total Sum of animal ------>"<<sumEach[j]<<" \tPERCENTAGE --->"<<temmmm<<endl;
 			}
-			//for(int j=0;j<b.size();j++){
-			//	if(b[j]->getYear()!=2011 && b[j]->getsubRegion()=="All"){
-			//		cout<<*b[j];
-					//cout<<"---SUM---->"<<sumEach[j]<<endl;
-		//		cout<<sumEach[j]<<endl;
-			//	}
-				
-				//cout<<*b[j];
-			//}
 		}
 		//cout<<key[i]<<endl;
 		cout<<endl;
