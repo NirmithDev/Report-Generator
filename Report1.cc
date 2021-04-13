@@ -14,7 +14,7 @@ using namespace std;
 #include "Record.h"
 
 Report1::Report1(){
-	cout<<"TEST 5 PASSED"<<endl;
+	cout<<"TEST 8 PASSED"<<endl;
 	l=new DescBehaviour<float>();
 	repo1=new ReportData<float>(l);
 	//ReportGenerator::populate();
@@ -27,6 +27,50 @@ Report1::~Report1(){
 
 void Report1::compute(){
 	
+//	vector<string> keys=regionMap.getKeys();
+	vector<string> keys=animalTypeMap.getKeys();
+	vector<int> sumEach;
+	int sumTot=0;
+	//find sum of each and all animal in all the provinces for the year 2016 with the sub region ALL
+	for(int i=0;i<keys.size();i++){
+		int sum=0;
+		cout<<keys[i]<<endl;
+		vector<string> key=regionMap.getKeys();
+		vector<Record*>& a=animalTypeMap[keys[i]];
+		//set each animal type to every single region sorta like pair
+		//for(int j=0;j<key.size();j++){
+		//	if(key[j]!="CAN"){
+		//		cout<<"--------------"<<key[j]<<endl;
+				//vector<Record*>& a=animalTypeMap[keys[i]];
+				cout<<endl;
+		for(int k=0;k<a.size();k++){
+			if(a[k]->getsubRegion()=="All" && a[k]->getYear()==2016 && a[k]->getRegion()!="CAN"){
+				cout<<*a[k];
+				sum+=a[k]->getnumAnimals();
+			}
+		}
+		cout<<"SUM FOR ALL IN THE COUNTRY "<<keys[i]<<" -> "<<sum<<endl;
+		sumTot+=sum;
+		cout<<endl;
+		sumEach.push_back(sum);
+		//	}
+//			cout<<"--------------"<<key[j]<<endl;
+		//}
+	}
+	cout<<"TOTAL SUM OF ALL ANIMALS -> "<<sumTot<<endl;
+	cout<<"THE SUM VECTOR COLLEC:::"<<endl;
+	//for(int i=0;i<sumEach.size();i++){
+	//	cout<<sumEach[i]<<endl;
+	//}
+	//after calculating each animals total and the total sum and adding them to the sumEach collection
+	//we need to divide each animal with that type
+	//so a iterator thru each city and in each city divide all the animals and append to my 2d collection for later on processing
+	//if sum or number of that animal is a 0 then we just append a 0 otherwise we do the above mentioned
+	
+		
+//	for(int i=0;i<sumEach.size();i++){
+//		cout<<sumEach[i]<<endl;
+//	}
 	
 }
 
