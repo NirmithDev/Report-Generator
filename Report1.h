@@ -14,6 +14,8 @@ class Report1:public ReportGenerator{
 		ReportData<float>* repo1;
 		DescBehaviour<float>* l;
 		vector<vector<float>> col;
+		vector<float> perc;
+		vector<string> anNam;
 		//virtual void computeHelper(vector<Record*>,vector<Record*>,int,int);
 		
 		
