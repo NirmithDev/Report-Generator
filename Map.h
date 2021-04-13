@@ -7,8 +7,7 @@ using namespace std;
 
 template <class T>
 class Map{
-	//is this needed? 
-	//template <class V>
+
 	private:
 		vector<T> keys;
 		vector<vector<Record*>> values;
@@ -17,7 +16,6 @@ class Map{
 		int getKeySize();
 		vector<T>& getKeys();
 		vector<Record*>& operator[](T);
-		//vector<Record*> operator=(const Record) 
 };
 
 template <class T>
@@ -27,7 +25,6 @@ void Map<T>::add(T key,Record* rec){
 		vector<Record*> newcollection;
 		newcollection.push_back(rec);
 		values.push_back(newcollection);
-//		values.push_back(rec);
 	}
 	else{
 		if(keys.size()==values.size()){
@@ -74,23 +71,12 @@ vector<Record*>& Map<T>::operator[](T a){
 				return values[i];
 			}
 		}
+		throw("Error");
 	}
-	catch(const T s){
-		cout<<"Error"<<s<<endl;
-		
+	catch(const char* s){
+		throw(s);	
 	}
 }
-//catch(const int* s){
-	//	throw "it a integer";
-	//}
-	//catch(char s){
-	//	cout<<"Handled STRING error "<<s<<endl;
-		//return NULL;
-	//}	
-	//catch(int s){
-	//	cout<<"Handled INT error"<<endl;
-	//}
-		//return NULL;
 
 
 
