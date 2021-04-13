@@ -14,14 +14,12 @@ using namespace std;
 #include "Record.h"
 
 Report3::Report3(){
-	cout<<"TEST 4 PASSED"<<endl;
 	l=new DescBehaviour<int>();
 	repo3=new ReportData<int>(l);
 	ReportGenerator::populate();
 }
 Report3::~Report3(){
 	delete repo3;
-	//max.clear();
 	ReportGenerator::cleanUp();
 }
 
@@ -31,7 +29,6 @@ void Report3::computeHelper(vector<Record*>& e){
 	max.clear();
 	for(int i=0;i<e.size();i++){
 		if(e[i]->getRegion()!="CAN" && e[i]->getYear()!=2011 && e[i]->getsubRegion()!="All"){
-			//cout<<*e[i];
 			int maxHor=0;
 			for(int j=i;j<=e.size();j++){
 				if(e[j]->getRegion()==e[i]->getRegion()){
@@ -63,24 +60,17 @@ void Report3::computeHelper(vector<Record*>& e){
 				}
 			}
 			if(c==1){
-				cout<<*e[i]<<endl;
 				max.push_back(e[i]);
 			}
 		}
 	}
-	
-	
-	for(int i=0;i<max.size();i++){
-		cout<<*max[i];
-	}
-	
+
 	formatData(repo3);
 	printReport(repo3);
 }
 
 
 void Report3::compute(){
-	cout<<"I WAS CALLED\n";
 	try{
 		vector<Record*>& a=animalTypeMap["Horses-Ponies"];
 		computeHelper(a);
@@ -93,8 +83,6 @@ void Report3::compute(){
 }
 
 void Report3::formatData(ReportData<int>* ab){
-	cout<<max.size();
-	
 	for(int i=0;i<max.size();i++){
 
 		stringstream ss;

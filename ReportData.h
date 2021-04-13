@@ -25,7 +25,6 @@ class ReportData{
 				key=a;
 				row=n;
 			}
-			//V& getKeys();	
 	};
 	
 	private:
@@ -44,8 +43,7 @@ class ReportData{
 
 template <class T>
 ReportData<T>::ReportData(CompareBehaviour<T>* c):comp(c){
-	//comp=c;
-	cout<<"I AM HERE"<<endl;
+	
 	
 }
 

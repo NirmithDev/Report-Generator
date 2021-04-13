@@ -2,23 +2,20 @@
 using namespace std;
 #include <string>
 
-//#include "ReportGenerator.h"
 #include "Report3.h"
 #include "Report2.h"
 #include "Report1.h"
 
 int main(){
-	cout<<"TEST 6"<<endl;
+	//cout<<"TEST 6"<<endl;
 	
 	
 	Report1* d=new Report1();
 	Report2* c=new Report2();
-	//c->compute();
 	int a;
 	cin>>a;
 	Report3* b=new Report3();
 	while(a!=0){
-		//Report3* b=new Report3();
 		if(a==2){
 		c->compute();
 		}

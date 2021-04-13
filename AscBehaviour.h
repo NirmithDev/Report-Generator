@@ -15,7 +15,6 @@ class AscBehaviour:public CompareBehaviour<T>{
 
 template <class T>
 AscBehaviour<T>::AscBehaviour(){
-	cout<<"TEST 2 PASSED"<<endl;
 }
 
 template <class T>

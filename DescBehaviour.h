@@ -15,7 +15,6 @@ class DescBehaviour:public CompareBehaviour<T>{
 
 template <class T>
 DescBehaviour<T>::DescBehaviour(){
-	cout<<"TEST 3 PASSED"<<endl;
 }
 
 template <class T>

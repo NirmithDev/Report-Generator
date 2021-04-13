@@ -14,7 +14,6 @@ class CompareBehaviour{
 
 template<class T>
 CompareBehaviour<T>::CompareBehaviour(){
-	cout<<"TEST 1 PASSED"<<endl;
 }
 
 #endif
