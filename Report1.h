@@ -13,7 +13,7 @@ class Report1:public ReportGenerator{
 	private:
 		ReportData<float>* repo1;
 		DescBehaviour<float>* l;
-		vector<vector<int>> perc;
+		vector<vector<float>> col;
 		//virtual void computeHelper(vector<Record*>,vector<Record*>,int,int);
 		
 		
