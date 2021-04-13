@@ -77,16 +77,31 @@ void Report1::compute(){
 			cout<<key[i]<<endl;
 			vector<Record*>& b=regionMap[key[i]];
 			//cout<<b.size()<<endl;
+			//segregate the 2011 and 2016
+			vector<Record*> te;
 			for(int j=0;j<b.size();j++){
 				if(b[j]->getYear()!=2011 && b[j]->getsubRegion()=="All"){
-					cout<<*b[j];
+					te.push_back(b[j]);
 				}
-				//cout<<*b[j];
 			}
+			for(int j=0;j<te.size();j++){
+				cout<<*te[j];
+				cout<<"Total Sum of animal ------>"<<sumEach[j]<<endl;
+			}
+			//for(int j=0;j<b.size();j++){
+			//	if(b[j]->getYear()!=2011 && b[j]->getsubRegion()=="All"){
+			//		cout<<*b[j];
+					//cout<<"---SUM---->"<<sumEach[j]<<endl;
+		//		cout<<sumEach[j]<<endl;
+			//	}
+				
+				//cout<<*b[j];
+			//}
 		}
 		//cout<<key[i]<<endl;
+		cout<<endl;
 	}
-	cout<<endl;
+	cout<<endl<<endl;
 	
 }
 
