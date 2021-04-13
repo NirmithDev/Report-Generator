@@ -52,7 +52,10 @@ void Report1::compute(){
 		cout<<"SUM FOR ALL IN THE COUNTRY "<<keys[i]<<" -> "<<sum<<endl;
 		sumTot+=sum;
 		cout<<endl;
-		sumEach.push_back(sum);
+		if(sum>0){
+			sumEach.push_back(sum);
+		}
+//		sumEach.push_back(sum);
 		//	}
 //			cout<<"--------------"<<key[j]<<endl;
 		//}
@@ -68,9 +71,9 @@ void Report1::compute(){
 	//if sum or number of that animal is a 0 then we just append a 0 otherwise we do the above mentioned
 	
 		
-//	for(int i=0;i<sumEach.size();i++){
-//		cout<<sumEach[i]<<endl;
-//	}
+	for(int i=0;i<sumEach.size();i++){
+		cout<<sumEach[i]<<endl;
+	}
 	
 }
 
