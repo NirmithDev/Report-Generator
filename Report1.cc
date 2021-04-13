@@ -62,18 +62,31 @@ void Report1::compute(){
 	}
 	cout<<"TOTAL SUM OF ALL ANIMALS -> "<<sumTot<<endl;
 	cout<<"THE SUM VECTOR COLLEC:::"<<endl;
-	//for(int i=0;i<sumEach.size();i++){
-	//	cout<<sumEach[i]<<endl;
-	//}
+	for(int i=0;i<sumEach.size();i++){
+		cout<<sumEach[i]<<endl;
+	}
+	cout<<endl;
 	//after calculating each animals total and the total sum and adding them to the sumEach collection
 	//we need to divide each animal with that type
 	//so a iterator thru each city and in each city divide all the animals and append to my 2d collection for later on processing
 	//if sum or number of that animal is a 0 then we just append a 0 otherwise we do the above mentioned
 	
-		
-	for(int i=0;i<sumEach.size();i++){
-		cout<<sumEach[i]<<endl;
+	vector<string> key=regionMap.getKeys();
+	for(int i=0;i<key.size();i++){
+		if(key[i]!="CAN"){
+			cout<<key[i]<<endl;
+			vector<Record*>& b=regionMap[key[i]];
+			//cout<<b.size()<<endl;
+			for(int j=0;j<b.size();j++){
+				if(b[j]->getYear()!=2011 && b[j]->getsubRegion()=="All"){
+					cout<<*b[j];
+				}
+				//cout<<*b[j];
+			}
+		}
+		//cout<<key[i]<<endl;
 	}
+	cout<<endl;
 	
 }
 
