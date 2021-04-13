@@ -2,13 +2,11 @@
 using namespace std;
 #include <string>
 
-#include "Report3.h"
-#include "Report2.h"
-#include "Report1.h"
+#include "Control.h"
 
 int main(){
 	//cout<<"TEST 6"<<endl;
-	
+	/*
 	
 	Report1* d=new Report1();
 	Report2* c=new Report2();
@@ -34,8 +32,9 @@ int main(){
 	//a->compute();
 	delete b;
 	delete c;
-	delete d;
-	
+	delete d;*/
+	Control c;
+	c.launch();
 	return 0;
 }
 

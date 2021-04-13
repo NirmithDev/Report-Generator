@@ -25,7 +25,6 @@ void ReportGenerator::cleanUp(){
 }
 
 void ReportGenerator::populate(){
-	cout<<"WE ARE HERE"<<endl;
 	ostream_iterator<Record> outItr(cout);
 	int year,numFarms,numAnimals;
 	string region,subRegion,animalType;
