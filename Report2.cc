@@ -26,35 +26,26 @@ void Report2_PercentageChange::compute(){
 
 	collc.clear();
 	vector<string> key=animalTypeMap.getKeys();
-	//probably considered hardcoding
-	int sum2011=0;
-	int sum2016=0;
+	int sum2=0;
+	int sum1=0;
 	vector<Record*> temp;
-	vector<vector<int>> sumCollec;
+	vector<int> sumCollec;
 	for(int i=0;i<key.size();i++){
 		temp.clear();
-		int sum1=0;
-		//int sum6=0;
-		vector<int> lo;
 		vector<Record*>& a=yearMap[2011];
 		vector<Record*>& b=yearMap[2016];
 		for(int j=0;j<a.size();j++){
 			if(a[j]->getanimalType()==key[i] && a[j]->getRegion()=="CAN"){
 				temp.push_back(a[j]);
-				sum2011+=a[j]->getnumAnimals();
 				sum1+=a[j]->getnumAnimals();
 			}
 		}
-		lo.push_back(sum1);
-		sum1=0;
 		for(int j=0;j<b.size();j++){
 			if(b[j]->getanimalType()==key[i] && b[j]->getRegion()=="CAN"){
-				temp.push_back(b[j]);				
-				sum2016+=b[j]->getnumAnimals();
-				sum1+=b[j]->getnumAnimals();
+				temp.push_back(b[j]);
+				sum2+=b[j]->getnumAnimals();
 			}
 		}
-		lo.push_back(sum1);
 		if(temp.size()==1){
 			if(temp[0]->getYear()==2011){
 				temp.push_back(new Record(2016,"CAN",0,0,"All",key[i]));
@@ -64,38 +55,24 @@ void Report2_PercentageChange::compute(){
 
 			}
 		}
-		sumCollec.push_back(lo);
 		collc.push_back(temp);
 	}
-	formatData(repo2,sum2011,sum2016,sumCollec);
+	sumCollec.push_back(sum1);
+	sumCollec.push_back(sum2);
+	formatData(repo2,sumCollec);
 	printReport(repo2);	
 
 }
 
-void Report2_PercentageChange::formatData(ReportData<float>* cb,int sum2011,int sum2016,vector<vector<int>> test){
+void Report2_PercentageChange::formatData(ReportData<float>* cb,vector<int> test){
 	vector<vector<float>> lls;
-	for(int i=0;i<test.size();i++){
-		
-		for(int j=0;j<test[i].size();j++){
-			cout<<test[i][j]<<"\t";
-		}
-		cout<<endl;
-	}
+	
 	for(int i=0;i<collc.size();i++){
 		float tel;
 		vector<float> ttl;
-		//probably considered hardcoding
 		for(int j=0;j<collc[i].size();j++){
-			if(collc[i][j]->getYear()==2011){
-				
-				tel= 100*(collc[i][j]->getnumAnimals())/(float)sum2011;
-				ttl.push_back(tel);
-			}
-			else{
-				tel= 100*(collc[i][j]->getnumAnimals())/(float)sum2016;
-				ttl.push_back(tel);
-			}
-			
+			tel= 100*(collc[i][j]->getnumAnimals())/(float)test[j];
+			ttl.push_back(tel);
 		}
 		lls.push_back(ttl);
 	}

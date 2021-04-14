@@ -20,7 +20,7 @@ class Report2_PercentageChange:public ReportGenerator{
 		Report2_PercentageChange();
 		virtual ~Report2_PercentageChange();
 		virtual void compute();
-		virtual void formatData(ReportData<float>*,int,int,vector<vector<int>>);
+		virtual void formatData(ReportData<float>*,vector<int>);
 		virtual void printReport(ReportData<float>*);
 };
 
