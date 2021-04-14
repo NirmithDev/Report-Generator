@@ -18,8 +18,6 @@ class ReportGenerator{
 		static Map<string> animalTypeMap;
 
 	public:
-		//not specified but it is here anyway
-		//ReportGenerator();
 		//the function to populate the maps and census collection
 		static void populate();
 		virtual void compute()=0;
@@ -30,5 +28,8 @@ class ReportGenerator{
 #endif
 
 /*
-
+-> base class
+-> we have a vector of record* called census this will contain all the data read in from the file
+-> we will have 3 respective maps called yearMap, regionMap and animalTypeMap with the corresponding data types
+-> we have a function called populate which reads the data from the farms.dat file and accordingly populates all the map and the census collection  
 */

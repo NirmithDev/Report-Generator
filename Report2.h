@@ -5,7 +5,6 @@
 #include<list>
 #include "ReportGenerator.h"
 #include "AscBehaviour.h"
-//#include "ReportData.h"
 
 class Report2:public ReportGenerator{
 

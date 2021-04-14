@@ -34,7 +34,6 @@ void ReportGenerator::populate(){
 		exit(1);
 	}
 	while(infile>>year>>region>>subRegion>>animalType>>numFarms>>numAnimals){
-		//populate the record collection
 		census.push_back(new Record(year,region,numAnimals,numFarms,subRegion,animalType));
 	}
 
