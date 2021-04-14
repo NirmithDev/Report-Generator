@@ -26,3 +26,8 @@ bool AscBehaviour<T>::compare(T a, T b){
 		return false;
 	}
 }	
+
+/*
+-> Ascending class template which is a derived class template that checks if key 1 is greater than key 2
+-> using the virtual compare function 
+*/

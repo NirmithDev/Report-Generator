@@ -26,3 +26,8 @@ bool DescBehaviour<T>::compare(T a, T b){
 		return false;
 	}
 }	
+
+/*
+-> the Descending class template which is a derived class template checks if key 2 is greater than key 1
+-> using the virtual compare function
+*/

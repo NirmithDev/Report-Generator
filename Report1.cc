@@ -86,7 +86,7 @@ void Report1::compute(){
 		//cout<<endl;
 	}
 	
-	cout<<endl<<endl;
+	//cout<<endl<<endl;
 	//calculate the total number of farms for each region
 	//and add them all and append to another collection that will be used later on for sorting
 	//percentage breakdown of all animals in that region
@@ -135,8 +135,8 @@ void Report1::formatData(ReportData<float>* k){
 
 void Report1::printReport(ReportData<float>* lm){
 	
-	cout<<"\n\n\t\t\t\t\t\t\t PERCENTAGE OF FARMS BY REGION\t\t\n";
-	cout<<"\t\t\t\t\t\t------------------------------------------------\t\t\n";
+	cout<<"\n\n\t\t\t\t\t\t\t PERCENTAGE OF FARMS BY REGION (2016)\t\t\n";
+	cout<<"\t\t\t\t\t\t-----------------------------------------------------\t\t\n";
 	cout<<"     ";
 	for(int i=0;i<anNam.size();i++){
 		if(anNam[i].size()>6){

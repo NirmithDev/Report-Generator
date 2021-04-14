@@ -32,7 +32,6 @@ void Report3::computeHelper(vector<Record*>& e){
 			int maxHor=0;
 			for(int j=i;j<=e.size();j++){
 				if(e[j]->getRegion()==e[i]->getRegion()){
-					//find maximum num of animals of all within this for loops save the position and once it is false set the max Hor back to 0 let maxPos be as it is
 					if(maxHor<e[j]->getnumAnimals()){
 						maxHor=e[j]->getnumAnimals();
 						maxPos=j;
@@ -71,15 +70,9 @@ void Report3::computeHelper(vector<Record*>& e){
 
 
 void Report3::compute(){
-	try{
-		vector<Record*>& a=animalTypeMap["Horses-Ponies"];
-		computeHelper(a);
-		cout<<endl;
-	}
-	catch(char* b){
-		cout<<b<<endl;
-	}
-	
+	vector<Record*>& a=animalTypeMap["Horses-Ponies"];
+	computeHelper(a);
+	cout<<endl;
 }
 
 void Report3::formatData(ReportData<int>* ab){

@@ -82,7 +82,12 @@ vector<Record*>& Map<T>::operator[](T a){
 
 
 
-
+/*
+-> map class that contains all the data that will be read from a file as shall be in the reportGenerator class
+-> we have also have a bunch of getter for keys and keySize
+-> we have a add function that adds to the keys and the collection if the key doesn't exist else we just add to the collection of the keys if it exists
+-> we have a subscriptoperator that returns the values for a particular key
+*/
 
 
 

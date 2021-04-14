@@ -16,3 +16,8 @@ class View
 };
 
 #endif
+
+/*
+-> the view class is the class that contains the menu and takes in users input and provides results accrdg to the users input
+-> taken refernece from previous assignments
+*/
