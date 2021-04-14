@@ -1,9 +1,6 @@
-TARGETS	=	p3
 
-all:	$(TARGETS)
-
-p3:	main.o Record.o ReportGenerator.o Report3.o Report2.o Report1.o View.o Control.o
-	g++ -o p3 main.o Record.o ReportGenerator.o Report3.o Report2.o Report1.o View.o Control.o
+project:	main.o Record.o ReportGenerator.o Report3.o Report2.o Report1.o View.o Control.o
+	g++ -o project main.o Record.o ReportGenerator.o Report3.o Report2.o Report1.o View.o Control.o
 
 main.o:	main.cc Report3.h Report2.h
 	g++ -c main.cc
@@ -30,4 +27,4 @@ Control.o: Control.cc Control.h
 	g++ -c Control.cc
 	
 clean:
-	rm -f *.o p3
+	rm -f *.o project
