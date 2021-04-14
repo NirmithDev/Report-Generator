@@ -13,18 +13,18 @@ using namespace std;
 #include "Report3.h"
 #include "Record.h"
 
-Report3::Report3(){
+Report3_maxHorseByReg::Report3_maxHorseByReg(){
 	l=new DescBehaviour<int>();
 	repo3=new ReportData<int>(l);
 	ReportGenerator::populate();
 }
-Report3::~Report3(){
+Report3_maxHorseByReg::~Report3_maxHorseByReg(){
 	delete repo3;
 	ReportGenerator::cleanUp();
 }
 
 
-void Report3::computeHelper(vector<Record*>& e){
+void Report3_maxHorseByReg::computeHelper(vector<Record*>& e){
 	int maxPos=0;
 	max.clear();
 	for(int i=0;i<e.size();i++){
@@ -69,13 +69,13 @@ void Report3::computeHelper(vector<Record*>& e){
 }
 
 
-void Report3::compute(){
+void Report3_maxHorseByReg::compute(){
 	vector<Record*>& a=animalTypeMap["Horses-Ponies"];
 	computeHelper(a);
 	cout<<endl;
 }
 
-void Report3::formatData(ReportData<int>* ab){
+void Report3_maxHorseByReg::formatData(ReportData<int>* ab){
 	for(int i=0;i<max.size();i++){
 
 		stringstream ss;
@@ -91,7 +91,7 @@ void Report3::formatData(ReportData<int>* ab){
 	}	
 }
 
-void Report3::printReport(ReportData<int>* k){
+void Report3_maxHorseByReg::printReport(ReportData<int>* k){
 	cout<<"\n\t SUB-REGION WITH MOST HORSES/PONIES BY REGION IN 2016\t\t\n";
 	cout<<"\t------------------------------------------------------\n";
 	cout<<*k;

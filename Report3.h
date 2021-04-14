@@ -5,25 +5,21 @@
 #include<list>
 #include "ReportGenerator.h"
 
-class Report3:public ReportGenerator{
+class Report3_maxHorseByReg:public ReportGenerator{
 
 	private:
 		ReportData<int>* repo3;
 		DescBehaviour<int>* l;
 		int cou=0;
 		virtual void computeHelper(vector<Record*>&);
-
-		//collection containing all the regions with subregions that got largest number of horse's and ponies in that region 
 		vector<Record*> max;
 		list<Record*> maxPonies;
 		
 	public:
-		Report3();
-		virtual ~Report3();
+		Report3_maxHorseByReg();
+		virtual ~Report3_maxHorseByReg();
 		virtual void compute();
-		//add in the parameter as seen fit
 		virtual void formatData(ReportData<int>*);
-		//printing the data
 		virtual void printReport(ReportData<int>*);
 };
 

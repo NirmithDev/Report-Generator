@@ -13,12 +13,15 @@ class Control
 		~Control();
 		void launch();
 	private:
-		Report1* rep1;
-		Report2* rep2;
-		Report3* rep3;
+		Report1_PercentageOfFarmByReg* rep1;
+		Report2_PercentageChange* rep2;
+		Report3_maxHorseByReg* rep3;
 		vector<ReportGenerator*> collections;
 		
 };
 
 #endif
 
+/*
+this class is to use the view class and create a menu when the program is run
+*/

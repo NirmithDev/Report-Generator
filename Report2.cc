@@ -13,16 +13,16 @@ using namespace std;
 #include "Report2.h"
 #include "Record.h"
 
-Report2::Report2(){
+Report2_PercentageChange::Report2_PercentageChange(){
 	l=new AscBehaviour<float>();
 	repo2=new ReportData<float>(l);
 }
-Report2::~Report2(){
+Report2_PercentageChange::~Report2_PercentageChange(){
 	delete repo2;
 }
 
 
-void Report2::compute(){
+void Report2_PercentageChange::compute(){
 
 	collc.clear();
 	vector<string> key=animalTypeMap.getKeys();
@@ -34,9 +34,7 @@ void Report2::compute(){
 		temp.clear();
 		vector<Record*>& a=yearMap[2011];
 		vector<Record*>& b=yearMap[2016];
-		//first condition is 2011 
 		for(int j=0;j<a.size();j++){
-			//check if it exists 
 			if(a[j]->getanimalType()==key[i] && a[j]->getRegion()=="CAN"){
 				temp.push_back(a[j]);
 				sum2011+=a[j]->getnumAnimals();
@@ -64,8 +62,7 @@ void Report2::compute(){
 
 }
 
-void Report2::formatData(ReportData<float>* cb,int sum2011,int sum2016){
-	//time for format data
+void Report2_PercentageChange::formatData(ReportData<float>* cb,int sum2011,int sum2016){
 	vector<vector<float>> lls;
 	for(int i=0;i<collc.size();i++){
 		float tel;
@@ -106,14 +103,13 @@ void Report2::formatData(ReportData<float>* cb,int sum2011,int sum2016){
 	
 }
 
-void Report2::printReport(ReportData<float>* c){
+void Report2_PercentageChange::printReport(ReportData<float>* c){
 	
 	cout<<"\n\t \tPERCENTAGE CHANGE OF ANIMALS (2011-2016)\t\t\n";
 	cout<<"\t---------------------------------------------------------\n";
 	cout<<"\t\t ANIMAL TYPE\t  2011\t    2016     Change"<<endl<<endl;
 	cout<<*c;
 	cout<<"\t---------------------------------------------------------\n";
-	//write into file
 	ofstream outfile("Report2.txt",ios::out);
 	if (!outfile) {
     		cout << "Error:  could not open file" << endl;

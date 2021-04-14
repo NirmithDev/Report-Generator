@@ -13,11 +13,11 @@ void View::showMenu(int& choice)
   cout << "  (1) Percentage distribution of farms, by province (2016)" << endl;
   cout << "  (2) Percentage change of animals, by province (2011-2016)" << endl;
   cout << "  (3) Sub-region with highest number of horses by province (2016)" << endl;
-  cout << "  (0) Exit" << endl<<endl;
+  cout << "  (4) Exit" << endl<<endl;
 
   cout << "Enter your selection: ";
   cin >> choice;
-  if (choice == 0)
+  if (!(choice < 1 || choice > numOptions))
     return;
 
   while (choice < 1 || choice > numOptions) {
