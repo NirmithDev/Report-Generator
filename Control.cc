@@ -31,20 +31,5 @@ void Control::launch(){
 		else{
 			break;
 		}
-		/*if(p==1){
-			collections[0]->compute();
-		}
-		else if(p==2){
-			collections[1]->compute();
-		}
-		else if(p==3){
-			collections[2]->compute();
-		}
-		else if(p==0){
-			break;
-		}
-		else{
-			cout<<"INVALID INPUT\n";
-		}*/
 	}
 }
