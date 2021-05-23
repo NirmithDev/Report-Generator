@@ -45,3 +45,10 @@ Separate files included:
 -> at the moment there is only a single leak that occurs whenever Report 2 is run 
 -> I think it is the way I am handling the missing wild boar case in the year 2016 
 -> sadly I have run out of time to work and fix this issue since my exams are going to start soon but apart from that the code functions well to meet the requirements
+
+
+-> This project belongs to me but the credit for the tasks given goes to Christine Laurendau so if you use this be aware that it is at your own risk and I will accept no responsibility if you are caught with an academic integrity case 
+
+
+
+-> you were warned!!!
