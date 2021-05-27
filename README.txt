@@ -49,6 +49,6 @@ Separate files included:
 
 -> This project belongs to me but the credit for the tasks given goes to Christine Laurendau so if you use this be aware that it is at your own risk and I will accept no responsibility if you are caught with an academic integrity case 
 
-
+-> honestly do not take a 0 on it if you do not really understand it since a 0 on it is better than a F in the whole course
 
 -> you were warned!!!
